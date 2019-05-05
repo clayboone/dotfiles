@@ -4,4 +4,6 @@ set laststatus=2
 set number
 set relativenumber
 set mouse=a
+
 set colorcolumn=80
+highlight ColorColumn ctermbg=0
