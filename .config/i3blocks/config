@@ -34,8 +34,8 @@ markup=none
 # The second parameter overrides the mixer selection
 # See the script for details.
 [volume]
-label=VOL
-#label=♪
+#label=VOL
+label=♪
 instance=Master
 #instance=PCM
 interval=once
@@ -142,16 +142,13 @@ interval=5
 #
 # bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 # bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
-#[keyindicator]
-#instance=CAPS
-#interval=once
-#signal=11
+[keyindicator]
+instance=CAPS
+interval=once
+signal=11
 
 #[keyindicator]
 #instance=NUM
 #interval=once
 #signal=11
-
-export PATH="$HOME/.cargo/bin:$PATH"
-alias config='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME/'
 
