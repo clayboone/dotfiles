@@ -65,15 +65,15 @@ set $ws8 "λ.Φ"
 set $ws9 "λ.Ω"
 
 # switch to workspace
-bindsym $win+1 workspace $ws1
-bindsym $win+2 workspace $ws2
-bindsym $win+3 workspace $ws3
-bindsym $win+4 workspace $ws4
-bindsym $win+5 workspace $ws5
-bindsym $win+6 workspace $ws6
-bindsym $win+7 workspace $ws7
-bindsym $win+8 workspace $ws8
-bindsym $win+9 workspace $ws9
+bindsym $alt+1 workspace $ws1
+bindsym $alt+2 workspace $ws2
+bindsym $alt+3 workspace $ws3
+bindsym $alt+4 workspace $ws4
+bindsym $alt+5 workspace $ws5
+bindsym $alt+6 workspace $ws6
+bindsym $alt+7 workspace $ws7
+bindsym $alt+8 workspace $ws8
+bindsym $alt+9 workspace $ws9
 
 # move focused container to workspace
 bindsym $alt+Shift+1 move container to workspace $ws1
@@ -96,32 +96,33 @@ bindsym $alt+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # resize window (you can also use the mouse for that)
 mode "resize" {
 	# resize a little
-        bindsym h resize shrink width 2 px or 2 ppt
-        bindsym j resize grow height 2 px or 2 ppt
-        bindsym k resize shrink height 2 px or 2 ppt
-        bindsym l resize grow width 2 px or 2 ppt
+    bindsym h resize shrink width 2 px or 2 ppt
+    bindsym j resize grow height 2 px or 2 ppt
+    bindsym k resize shrink height 2 px or 2 ppt
+    bindsym l resize grow width 2 px or 2 ppt
 
-        # resize a lot
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+    # resize a lot
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $alt+r mode "default"
+    # back to normal
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $alt+r mode "default"
 }
 
 bindsym $alt+r mode "resize"
 
+
 # Start i3bar
+bindsym $alt+b bar mode toggle
+
 bar {
 	position top
 	mode hide
-	hidden_state hide
-	modifier $win
-        status_command i3blocks
+    status_command i3blocks
 }
 
 # Tell i3blocks when Caps_Lock is accidentally pressed.
@@ -133,8 +134,10 @@ bindsym --release Caps_Lock exec --no-startup-id pkill -SIGRTMIN+11 i3blocks
 bindsym $win+l exec --no-startup-id "i3lock --image=$HOME/wallpaper.png"
 
 # Gaps
-gaps outer 5
-gaps inner 10
+set $default_outer 5
+set $default_inner 10
+gaps outer $default_outer
+gaps inner $default_inner
 
 set $mode_gaps Gaps: (o)uter, (i)nner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -151,11 +154,11 @@ mode "$mode_gaps" {
 mode "$mode_gaps_outer" {
         bindsym plus  gaps outer current plus 5
         bindsym minus gaps outer current minus 5
-        bindsym 0     gaps outer current set 0
+        bindsym 0     gaps outer current set $default_outer
 
         bindsym Shift+plus  gaps outer all plus 5
         bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
+        bindsym Shift+0     gaps outer all set $default_outer
 
         bindsym Return mode "$mode_gaps"
         bindsym Escape mode "default"
@@ -163,11 +166,11 @@ mode "$mode_gaps_outer" {
 mode "$mode_gaps_inner" {
         bindsym plus  gaps inner current plus 5
         bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
+        bindsym 0     gaps inner current set $default_inner
 
         bindsym Shift+plus  gaps inner all plus 5
         bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
+        bindsym Shift+0     gaps inner all set $default_inner
 
         bindsym Return mode "$mode_gaps"
         bindsym Escape mode "default"
