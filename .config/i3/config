@@ -9,25 +9,31 @@ font pango:monospace 8
 floating_modifier $alt
 
 # start a terminal
-bindsym $alt+Shift+Return exec i3-sensible-terminal
+bindsym $alt+Return exec --no-startup-id i3-sensible-terminal
 
 # kill focused window
 bindsym $alt+Shift+q kill
 
 # start rofi
-bindsym $alt+p exec rofi -show drun
+bindsym $alt+p exec --no-startup-id rofi -show drun
 
-# change focus
+# Focus
+bindsym $alt+a focus parent
+bindsym $alt+d focus child
+
 bindsym $alt+h focus left
 bindsym $alt+j focus down
 bindsym $alt+k focus up
 bindsym $alt+l focus right
 
-# move focused window
 bindsym $alt+Shift+h move left
 bindsym $alt+Shift+j move down
 bindsym $alt+Shift+k move up
 bindsym $alt+Shift+l move right
+
+# Floating windows
+bindsym $alt+space focus mode_toggle
+bindsym $alt+Shift+space floating toggle
 
 # split in horizontal orientation
 bindsym $alt+g split h
@@ -43,18 +49,6 @@ bindsym $alt+s layout stacking
 bindsym $alt+w layout tabbed
 bindsym $alt+e layout toggle split
 
-# toggle tiling / floating
-bindsym $alt+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $alt+space focus mode_toggle
-
-# focus the parent container
-bindsym $alt+a focus parent
-
-# focus the child container
-bindsym $alt+d focus child
-
 # Define names for default workspaces
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "λ.α"
@@ -68,15 +62,15 @@ set $ws8 "λ.Φ"
 set $ws9 "λ.Ω"
 
 # switch to workspace
-bindsym $alt+1 workspace $ws1
-bindsym $alt+2 workspace $ws2
-bindsym $alt+3 workspace $ws3
-bindsym $alt+4 workspace $ws4
-bindsym $alt+5 workspace $ws5
-bindsym $alt+6 workspace $ws6
-bindsym $alt+7 workspace $ws7
-bindsym $alt+8 workspace $ws8
-bindsym $alt+9 workspace $ws9
+bindsym $win+1 workspace $ws1
+bindsym $win+2 workspace $ws2
+bindsym $win+3 workspace $ws3
+bindsym $win+4 workspace $ws4
+bindsym $win+5 workspace $ws5
+bindsym $win+6 workspace $ws6
+bindsym $win+7 workspace $ws7
+bindsym $win+8 workspace $ws8
+bindsym $win+9 workspace $ws9
 
 # move focused container to workspace
 bindsym $alt+Shift+1 move container to workspace $ws1
@@ -118,11 +112,68 @@ mode "resize" {
 
 bindsym $alt+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# Start i3bar
 bar {
+	position top
+	mode hide
+	hidden_state hide
+	modifier $win
         status_command i3blocks
 }
 
 # Tell i3blocks when Caps_Lock is accidentally pressed.
-bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+bindsym --release Caps_Lock exec --no-startup-id pkill -SIGRTMIN+11 i3blocks
+
+# Lock screen
+# i3lock won't expand ~, so use $HOME instead.
+# i3lock only supports PNG format images.
+bindsym $win+l exec --no-startup-id "i3lock --image=$HOME/wallpaper.png"
+
+# Gaps
+gaps outer 5
+gaps inner 10
+
+set $mode_gaps Gaps: (o)uter, (i)nner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $alt+o mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "$mode_gaps"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "$mode_gaps"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "$mode_gaps"
+        bindsym Escape mode "default"
+}
+
+# Borders
+default_border pixel
+
+# Run on start
+exec --no-startup-id $HOME/.fehbg
+exec --no-startup-id compton
+
