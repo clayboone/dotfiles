@@ -17,6 +17,9 @@ bindsym $alt+Shift+q kill
 # start rofi
 bindsym $alt+p exec --no-startup-id rofi -show drun
 
+# screen grab
+bindsym Print exec --no-startup-id $HOME/scripts/scrot_select_and_move.sh
+
 # Focus
 bindsym $alt+a focus parent
 bindsym $alt+d focus child
