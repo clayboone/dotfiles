@@ -3,6 +3,8 @@ let g:powerline_pycmd="py3"
 
 " yank/paste between vim sessions with a file
 " https://vim.fandom.com/wiki/Copy_and_paste_between_Vim_instances
+" (For vim's that were not compiled with '+clipboard'
+"  -> if ':echo has('clipboard')' returns 0, you need these next lines)
 let g:session_yank_file="~/.vim_yank"
 map <silent> <Leader>y :call Session_yank()<CR>
 vmap <silent> <Leader>y y:call Session_yank()<CR>
@@ -37,6 +39,12 @@ set number
 set relativenumber
 set mouse=a
 set showtabline=2
+set autoindent
+set smartindent
+set tabstop=4
+set expandtab
+set shiftwidth=4
+set smarttab
 syntax on
 
 " colorcolumn
@@ -44,9 +52,14 @@ set colorcolumn=80
 highlight ColorColumn ctermbg=0
 
 " tabs
-" note: <C-T> later
-map <C-T> :tabnew<CR>
-map <C-W> :tabclose<CR>
-map <C-H> :tabprevious<CR>
-map <C-L> :tabnext<CR>
+map <Leader>t :tabnew<CR>
+map <Leader>q :tabclose<CR>
+map <C-PageUp> :tabprevious<CR>
+map <C-PageDown> :tabnext<CR>
+
+" windows (panes in tabs)
+map <C-J> :wincmd j<CR>
+map <C-K> :wincmd k<CR>
+map <C-H> :wincmd h<CR>
+map <C-L> :wincmd l<CR>
 

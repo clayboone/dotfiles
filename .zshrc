@@ -8,24 +8,12 @@ ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Source oh-my-zsh first since I want to overwrite some of the aliases.
 export ZSH="/home/clay/.oh-my-zsh"
-source $ZSH/oh-my-zsh.sh
 
 # Options
 ENABLE_CORRECTION="true"
 
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
-
-# Set aliases
-alias config="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME/"
-alias grep="rg"
-
-unalias la
-unalias ll
-unalias l
-unalias lsa
-alias ls="exa -h"
-alias la="ls -l"
 
 # Set env's
 export EDITOR="vim"
@@ -90,4 +78,18 @@ tmux() {
 		fi
 	fi
 }
+
+# Source oh-my-zsh
+source $ZSH/oh-my-zsh.sh
+
+# Set aliases after sourcing oh-my-zsh
+alias config="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME/"
+alias grep="rg"
+
+unalias la
+unalias ll
+unalias l
+unalias lsa
+alias ls="exa -h"
+alias la="ls -l"
 

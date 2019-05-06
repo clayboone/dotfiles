@@ -1,0 +1,29 @@
+[global_config]
+  handle_size = 2
+  scroll_tabbar = True
+  title_font = Hack 10
+  title_use_system_font = False
+[keybindings]
+  next_tab = None
+  prev_tab = None
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#282828"
+    background_darkness = 0.9
+    background_type = transparent
+    cursor_color = "#ffffff"
+    cursor_color_fg = False
+    font = Bitstream Terminal 10
+    foreground_color = "#ebdbb2"
+    scrollback_lines = 2000
+    scrollbar_position = hidden
+    show_titlebar = False
