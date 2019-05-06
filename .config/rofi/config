@@ -1,6 +1,6 @@
-#rofi.theme: sidebar
+rofi.theme: sidebar
 #rofi.theme: zezic
 #rofi.theme: Monokai
 #rofi.theme: gruvbox-dark-soft
 #rofi.theme: dmenu
-rofi.theme: Pop-Dark
+#rofi.theme: Pop-Dark
