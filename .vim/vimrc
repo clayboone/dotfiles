@@ -7,3 +7,4 @@ set mouse=a
 
 set colorcolumn=80
 highlight ColorColumn ctermbg=0
+syntax on
