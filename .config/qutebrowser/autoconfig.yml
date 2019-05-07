@@ -10,6 +10,8 @@ settings:
       w: session-save
       wq: quit --save
       wqa: quit --save
+  content.headers.user_agent:
+    global: null
   downloads.location.directory:
     global: $HOME/
   downloads.location.prompt:
