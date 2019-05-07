@@ -54,15 +54,16 @@ bindsym $alt+e layout toggle split
 
 # Define names for default workspaces
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "λ.α"
-set $ws2 "λ.β"
-set $ws3 "λ.γ"
-set $ws4 "λ.δ"
-set $ws5 "λ.ε"
-set $ws6 "λ.θ"
-set $ws7 "λ.Σ"
-set $ws8 "λ.Φ"
-set $ws9 "λ.Ω"
+set $ws1 "1:λ.α"
+set $ws2 "2:λ.β"
+set $ws3 "3:λ.γ"
+set $ws4 "4:λ.δ"
+set $ws5 "5:λ.ε"
+set $ws6 "6:λ.θ"
+set $ws7 "7:λ.Σ"
+set $ws8 "8:λ.Φ"
+set $ws9 "9:λ.Ω"
+set $ws10 "10:λ.Ω"
 
 # switch to workspace
 bindsym $alt+1 workspace $ws1
@@ -74,6 +75,7 @@ bindsym $alt+6 workspace $ws6
 bindsym $alt+7 workspace $ws7
 bindsym $alt+8 workspace $ws8
 bindsym $alt+9 workspace $ws9
+bindsym $alt+10 workspace $ws10
 
 # move focused container to workspace
 bindsym $alt+Shift+1 move container to workspace $ws1
@@ -85,6 +87,7 @@ bindsym $alt+Shift+6 move container to workspace $ws6
 bindsym $alt+Shift+7 move container to workspace $ws7
 bindsym $alt+Shift+8 move container to workspace $ws8
 bindsym $alt+Shift+9 move container to workspace $ws9
+bindsym $alt+Shift+10 move container to workspace $ws10
 
 # reload the configuration file
 bindsym $alt+Shift+c reload
@@ -121,6 +124,7 @@ bindsym $alt+b bar mode toggle
 
 bar {
 	position top
+    strip_workspace_numbers yes
 	mode hide
     status_command i3blocks
 }
@@ -182,4 +186,4 @@ default_border pixel
 # Run on start
 exec --no-startup-id $HOME/.fehbg
 exec --no-startup-id compton
-
+exec --no-startup-id yakyak
