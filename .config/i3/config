@@ -136,7 +136,7 @@ bindsym --release Caps_Lock exec --no-startup-id pkill -SIGRTMIN+11 i3blocks
 # Lock screen
 # i3lock won't expand ~, so use $HOME instead.
 # i3lock only supports PNG format images.
-bindsym $win+l exec --no-startup-id "i3lock --image=$HOME/wallpaper.png"
+bindsym $win+l exec --no-startup-id "$HOME/scripts/lock_screen.sh"
 
 # Gaps
 set $default_outer 5
