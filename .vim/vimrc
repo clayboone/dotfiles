@@ -92,6 +92,7 @@ map <C-L> :wincmd l<CR>
 " vim-plug plugins
 call plug#begin()
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
