@@ -97,25 +97,17 @@ min_width=CPU: 100.00%
 #[load_average]
 #interval=10
 
-# Battery indicator
-#
-# The battery instance defaults to 0.
+# Custom battery script because the default is calls acpi(1) a bunch of times.
+# I can do better.
 [battery]
-#label=BAT
-label=⚡
-#instance=1
-#interval=30
 interval=1
-command=/home/clay/scripts/i3blocks_battery.py 0
-#command=/usr/lib/i3blocks/$BLOCK_NAME
-#separator_block_width=15
-#markup=none
+command=/home/clay/scripts/i3blocks_battery.py -p 2 0
 
 # Date Time
 #
 [time]
 command=date '+%Y-%m-%d %H:%M:%S'
-interval=5
+interval=1
 
 # Generic media player support
 #
