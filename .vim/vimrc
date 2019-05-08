@@ -53,7 +53,7 @@ endfun
 " set some vars
 set laststatus=2
 set number
-set relativenumber
+set norelativenumber
 set mouse=a
 set autoindent
 set smartindent
@@ -96,7 +96,10 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
+Plug 'wakatime/vim-wakatime'
+Plug 'prettier/vim-prettier', { 'do': 'npm install', 'branch': 'release/1.x' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'python-mode/python-mode', { 'branch': 'develop' }
 call plug#end()
 
 " plugin options
@@ -105,20 +108,34 @@ call plug#end()
 nnoremap <C-n> :NERDTreeToggle<CR>
 
 "syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
 
 " vim-gitgutter
 "technically, this is vim's own setting
 set updatetime=100
 
-"rust.vim
+" vim-prettier
+let g:prettier#autoformat = 0
+"for vim < 8.0, use :Prettier without the 'Async'
+autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql PrettierAsync
+
+" rust.vim
 let g:rustfmt_autosave = 1
+
+" python-mode
+let g:pymode_python = 'python3'
+let g:pymode_lint = 1
+let g:pymode_lint_write = 1
+let g:pymode_rope = 0
+
+"Auto-format when saving
+autocmd BufWritePost *.py PymodeLintAuto
 
 " `filetype plugin indent on` and `syntax enable` are run by plugend()
 
