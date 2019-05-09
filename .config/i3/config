@@ -183,6 +183,7 @@ mode "$mode_gaps_inner" {
 default_border pixel
 
 # Run on start
+exec --no-startup-id xmodmap $HOME/.config/xmodmap/config
 exec --no-startup-id $HOME/.fehbg
 exec --no-startup-id compton
 exec --no-startup-id yakyak
