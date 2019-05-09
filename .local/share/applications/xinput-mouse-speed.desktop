@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Xinput Mouse Speed
+GenericName=Mouse Settings
+Comment=Change mouse settings
+Exec=/home/clay/scripts/xinput_mouse_speed.py -w /home/clay/.xinput
+Icon=
+StartupWMClass=
