@@ -187,7 +187,6 @@ for_window [window_role="About"] floating enable
 for_window [class="Xinput_mouse_speed"] floating enable
 
 # Run on start
-exec --no-startup-id xmodmap $HOME/.config/xmodmap/config
 exec --no-startup-id $HOME/.xinput
 exec --no-startup-id $HOME/.fehbg
 exec --no-startup-id compton
