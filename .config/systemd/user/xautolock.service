@@ -4,7 +4,7 @@ Description=Lock the screen automatically after a timeout
 [Service]
 Type=simple
 Environment=DISPLAY=:0
-ExecStart=/usr/bin/xautolock -time 5 -locker /home/clay/scripts/auto_lock_screen.sh
+ExecStart=/usr/bin/xautolock -time 5 -locker /home/clay/scripts/auto_lock_screen.sh -nowlocker /home/clay/scripts/lock_screen.sh
 
 [Install]
 WantedBy=graphical.target
