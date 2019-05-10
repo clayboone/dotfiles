@@ -188,7 +188,18 @@ for_window [window_role="About"] floating enable
 for_window [class="Xinput_mouse_speed"] floating enable
 
 # Run on start
+# wallpaper (using feh), ~/.Xresources, etc.
+exec --no-startup-id wal -R
+
+# mouse settings
 exec --no-startup-id $HOME/.xinput
-exec --no-startup-id $HOME/.fehbg
+
+# compositor
 exec --no-startup-id compton
+
+# hangouts
 exec --no-startup-id yakyak
+
+# dunst (systemctl --user service)
+# xautolock (systemctl --user service)
+# ssh-agent (systemctl --user service)
