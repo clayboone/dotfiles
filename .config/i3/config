@@ -3,7 +3,7 @@ set $alt Mod1
 set $win Mod4
 
 # Window titles
-font pango:monospace 8
+font pango:Helvetica Bold 8
 
 # Use Mouse+$alt to drag floating windows to their wanted position
 floating_modifier $alt
@@ -127,6 +127,7 @@ bar {
 	position top
     strip_workspace_numbers yes
 	mode hide
+    font pango:Source Code Pro 8
     status_command i3blocks
 }
 
