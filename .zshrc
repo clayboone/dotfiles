@@ -93,3 +93,5 @@ unalias lsa
 alias ls="exa -h"
 alias la="ls -l"
 
+# set colors from wal
+(cat ~/.cache/wal/sequences &)
