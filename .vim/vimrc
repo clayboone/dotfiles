@@ -63,6 +63,7 @@ set shiftwidth=4
 set smarttab
 set formatoptions+=rco
 set splitbelow
+set background=light
 syntax on
 
 " Always show tabline, but if only 1 tab, it shows buffers.
