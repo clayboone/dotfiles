@@ -1,0 +1,4 @@
+set_from_resource $fg foreground
+set_from_resource $bg background
+set_from_resource $fbg color8
+

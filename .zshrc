@@ -95,3 +95,6 @@ alias la="ls -l"
 
 # set colors from wal
 (cat ~/.cache/wal/sequences &)
+
+# print any config status changes
+config status -s
