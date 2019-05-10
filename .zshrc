@@ -3,8 +3,9 @@ export PATH=$HOME/.local/bin:$HOME/.cargo/bin:/usr/local/bin:$PATH
 
 # Theme (use "random" for random)
 # Note: Set theme *before* sourcing oh-my-zsh
-ZSH_THEME="agnoster"
-ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+#ZSH_THEME="agnoster"
+#ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+echo 'source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme' >> ~/.zshrc
 
 # Source oh-my-zsh first since I want to overwrite some of the aliases.
 export ZSH="/home/clay/.oh-my-zsh"
@@ -98,3 +99,6 @@ alias la="ls -l"
 
 # print any config status changes
 config status -s
+source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
