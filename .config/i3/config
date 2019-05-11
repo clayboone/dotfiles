@@ -22,9 +22,9 @@ bindsym $alt+p exec --no-startup-id rofi -show drun
 bindsym Print exec --no-startup-id $HOME/scripts/scrot_select_and_move.sh
 
 # special buttons (xev(1) to discover)
-bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 2%- unmute
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 2%+ unmute
+bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 2%- unmute && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 2%+ unmute && pkill -SIGRTMIN+10 i3blocks
 bindsym XF86AudioMicMute exec --no-startup-id amixer -q set Capture toggle
 bindsym XF86AudioLaunch1 exec --no-startup-id echo ThinkButton WIP
 
