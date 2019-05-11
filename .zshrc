@@ -15,9 +15,10 @@ ENABLE_CORRECTION="true"
 
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git vi-mode)
-export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vi_mode status root_indicator background_jobs history)
+export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vi_mode status root_indicator background_jobs)
 export POWERLEVEL9K_VI_INSERT_MODE_STRING='<<<'
-export POWERLEVEL9K_VI_COMMAND_MODE_STRING=''
+export POWERLEVEL9K_VI_COMMAND_MODE_STRING='   '
 
 # Set env's
 export EDITOR="vim"
@@ -96,6 +97,9 @@ unalias l
 unalias lsa
 alias ls="exa -h"
 alias la="ls -l"
+
+unalias g
+alias g='git log --stat --graph'
 
 # disable flow control (for vim's <C-s>)
 stty -ixon
