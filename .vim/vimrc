@@ -77,6 +77,11 @@ highlight ColorColumn ctermbg=0
 au BufWinLeave ?* mkview
 au BufWinEnter ?* silent loadview
 
+" update with <C-s>
+nnoremap <C-S> :update<CR>
+inoremap <C-S> <Esc>:update<CR>
+vmap <C-S> <Esc>:update<CR>gv
+
 " tabs
 map <Leader>t :tabnew<CR>
 map <Leader>q :tabclose<CR>
@@ -140,4 +145,3 @@ let g:pymode_rope = 0
 autocmd BufWritePost *.py PymodeLintAuto
 
 " `filetype plugin indent on` and `syntax enable` are run by plugend()
-

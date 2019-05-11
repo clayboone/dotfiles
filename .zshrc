@@ -94,6 +94,9 @@ unalias lsa
 alias ls="exa -h"
 alias la="ls -l"
 
+# disable flow control (for vim's <C-s>)
+stty -ixon
+
 # set colors from wal
 (cat ~/.cache/wal/sequences &)
 
