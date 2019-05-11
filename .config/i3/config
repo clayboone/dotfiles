@@ -21,6 +21,13 @@ bindsym $alt+p exec --no-startup-id rofi -show drun
 # screen grab
 bindsym Print exec --no-startup-id $HOME/scripts/scrot_select_and_move.sh
 
+# special buttons (xev(1) to discover)
+bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 2%- unmute
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 2%+ unmute
+bindsym XF86AudioMicMute exec --no-startup-id amixer -q set Capture toggle
+bindsym XF86AudioLaunch1 exec --no-startup-id echo ThinkButton WIP
+
 # Focus
 bindsym $alt+a focus parent
 bindsym $alt+d focus child
@@ -206,5 +213,3 @@ exec --no-startup-id yakyak
 
 # screen locker
 exec --no-startup-id /usr/bin/xautolock -time 5 -detectsleep -locker /home/clay/scripts/auto_lock_screen.sh -nowlocker /home/clay/scripts/lock_screen.sh
-
-# ssh-agent (systemctl --user service)
