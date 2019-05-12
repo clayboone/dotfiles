@@ -10,9 +10,6 @@ source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
 # Source oh-my-zsh first since I want to overwrite some of the aliases.
 export ZSH="/home/clay/.oh-my-zsh"
 
-# Options
-ENABLE_CORRECTION="true"
-
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git vi-mode)
 export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
