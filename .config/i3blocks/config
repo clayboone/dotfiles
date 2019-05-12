@@ -91,7 +91,9 @@ interval=5
 # I can do better.
 [battery]
 interval=1
-command=/home/clay/scripts/i3blocks_battery.py -p 2 0
+instance=0
+command=/home/clay/scripts/superpower.py -d 2 -p
+markup=pango
 
 # Date Time
 #
