@@ -64,6 +64,10 @@ set smarttab
 set formatoptions+=rco
 set splitbelow
 set background=light
+set incsearch
+set mat=3
+set ignorecase
+set hlsearch
 syntax on
 
 " Always show tabline, but if only 1 tab, it shows buffers.
@@ -107,12 +111,16 @@ Plug 'wakatime/vim-wakatime'
 Plug 'prettier/vim-prettier', { 'do': 'npm install', 'branch': 'release/1.x' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
+Plug 'easymotion/vim-easymotion'
 call plug#end()
 
 " plugin options
 "nerdtree
 " preserve <C-n> in syntastic
 nnoremap <C-n> :NERDTreeToggle<CR>
+
+" easy motion s (see also: vim-sneak)
+map s <Plug>(easymotion-s)
 
 "syntastic
 "set statusline+=%#warningmsg#
