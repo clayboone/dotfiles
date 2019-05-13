@@ -22,6 +22,10 @@ bindsym $alt+p exec --no-startup-id rofi -show drun
 bindsym Print exec --no-startup-id $HOME/scripts/scrot_select_and_move.sh
 
 # special buttons (xev(1) to discover)
+# TODO: make a program that writes to /sys/class/backlight/intel_backlight/
+bindsym XF86MonBrightnessUp --no-startup-id exec echo
+bindsym XF86MonBrightnessDown --no-startup-id exec echo
+
 bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle && pkill -SIGRTMIN+10 i3blocks
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 2%- unmute && pkill -SIGRTMIN+10 i3blocks
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 2%+ unmute && pkill -SIGRTMIN+10 i3blocks
@@ -126,6 +130,21 @@ mode "resize" {
 
 bindsym $alt+r mode "resize"
 
+# Colors
+# class                  border  backgr. text    indicator child_border
+client.focused           $bg     $bg     $fg     $bg       $fbg
+client.focused_inactive $bg $bg $bg $bg
+client.unfocused        $bg $bg $bg $bg
+client.urgent           $bg $bg $bg $bg
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
 
 # Start i3bar
 bindsym $alt+b bar mode toggle
@@ -146,7 +165,7 @@ bindsym $win+l exec --no-startup-id xautolock -locknow
 
 # Gaps
 set $default_outer 5
-set $default_inner 10
+set $default_inner 30
 gaps outer $default_outer
 gaps inner $default_inner
 
