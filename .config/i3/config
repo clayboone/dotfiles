@@ -22,9 +22,8 @@ bindsym $alt+p exec --no-startup-id rofi -show drun
 bindsym Print exec --no-startup-id $HOME/scripts/scrot_select_and_move.sh
 
 # special buttons (xev(1) to discover)
-# TODO: make a program that writes to /sys/class/backlight/intel_backlight/
-bindsym XF86MonBrightnessUp --no-startup-id exec echo
-bindsym XF86MonBrightnessDown --no-startup-id exec echo
+bindsym XF86MonBrightnessUp exec --no-startup-id bright +15%
+bindsym XF86MonBrightnessDown exec --no-startup-id bright -15%
 
 bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle && pkill -SIGRTMIN+10 i3blocks
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 2%- unmute && pkill -SIGRTMIN+10 i3blocks
@@ -162,6 +161,17 @@ bindsym --release Caps_Lock exec --no-startup-id pkill -SIGRTMIN+11 i3blocks
 
 # Tell xautolock to lock now
 bindsym $win+l exec --no-startup-id xautolock -locknow
+
+# Brightness
+set $mode_brightness Brightness: ⬇ (j), ⬆ (k)
+bindsym $alt+i mode "$mode_brightness"
+
+mode "$mode_brightness" {
+        bindsym k   exec --no-startup-id bright +15%
+        bindsym j   exec --no-startup-id bright -15%
+        bindsym Return mode "$mode_gaps"
+        bindsym Escape mode "default"
+}
 
 # Gaps
 set $default_outer 5
