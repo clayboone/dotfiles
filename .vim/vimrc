@@ -103,6 +103,7 @@ map <C-L> :wincmd l<CR>
 " vim-plug plugins
 call plug#begin()
 Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-surround'
@@ -118,6 +119,12 @@ call plug#end()
 "nerdtree
 " preserve <C-n> in syntastic
 nnoremap <C-n> :NERDTreeToggle<CR>
+
+"nerdcommenter
+let g:NERDSpaceDelims = 1
+"map the '/' key, why is this underscore?
+nmap <C-_> <Plug>NERDCommenterToggle
+vmap <C-_> <Plug>NERDCommenterToggle<CR>
 
 " easy motion s (see also: vim-sneak)
 map s <Plug>(easymotion-s)
@@ -142,6 +149,7 @@ autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql PrettierAsync
 
 " rust.vim
 let g:rustfmt_autosave = 1
+let g:ycm_rust_src_path = '/usr/lib/rustlib/src/rust/src'
 
 " python-mode
 let g:pymode_python = 'python3'
