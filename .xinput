@@ -1,3 +1,0 @@
-#!/bin/sh
-xinput -set-prop 18 "Coordinate Transformation Matrix" 1 0 0 0 1 0 0 0 7.54
-xinput -set-prop 18 "libinput Accel Speed" -0.33
