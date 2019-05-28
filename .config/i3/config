@@ -174,8 +174,8 @@ mode "$mode_brightness" {
 }
 
 # Gaps
-set $default_outer 5
-set $default_inner 30
+set $default_outer 2
+set $default_inner 5
 gaps outer $default_outer
 gaps inner $default_inner
 

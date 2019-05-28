@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=true
+Type=Application
+Name=GTop
+GenericName=top
+Comment=Fancy Terminal-based System Monitor
+Exec=gtop
+Icon=
+StartupWMClass=
