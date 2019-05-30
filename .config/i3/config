@@ -171,7 +171,20 @@ mode "$mode_brightness" {
         bindsym j   exec --no-startup-id /home/clay/scripts/bright.py -7%
         bindsym k   exec --no-startup-id /home/clay/scripts/bright.py +7%
         bindsym l   exec --no-startup-id /home/clay/scripts/bright.py 100%
-        bindsym Return mode "$mode_gaps"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# TV Volume
+set $mode_tv TV Volume: 1 (h) | ⬇ (j) | ⬆ (k) | 10 (l)
+bindsym $alt+t mode "$mode_tv"
+
+mode "$mode_tv" {
+        bindsym h   exec --no-startup-id /home/clay/scripts/tv.py volume 1
+        bindsym j   exec --no-startup-id /home/clay/scripts/tv.py volume -1
+        bindsym k   exec --no-startup-id /home/clay/scripts/tv.py volume +1
+        bindsym l   exec --no-startup-id /home/clay/scripts/tv.py volume 10
+        bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 
