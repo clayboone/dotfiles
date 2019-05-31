@@ -113,6 +113,7 @@ Plug 'prettier/vim-prettier', { 'do': 'npm install', 'branch': 'release/1.x' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'easymotion/vim-easymotion'
+Plug 'Raimondi/delimitMate'
 call plug#end()
 
 " plugin options
@@ -160,5 +161,8 @@ let g:pymode_rope_complete_on_dot = 0
 
 "Auto-format when saving
 autocmd BufWritePost *.py PymodeLintAuto
+
+let g:delimitMate_expand_space = 1
+let g:delimitMate_expand_cr = 1
 
 " `filetype plugin indent on` and `syntax enable` are run by plugend()
