@@ -114,6 +114,9 @@ Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'easymotion/vim-easymotion'
 Plug 'Raimondi/delimitMate'
+"install fzf system-wide for this to work
+"otherwise: Plug 'junegunn/fzf'
+Plug '/usr/bin/fzf'
 call plug#end()
 
 " plugin options

@@ -98,6 +98,12 @@ alias la="ls -l"
 unalias g
 alias g='git log --stat --graph'
 
+# enable fzf (arch)
+if [ -d /usr/share/fzf ]; then
+    source /usr/share/fzf/completion.zsh
+    source /usr/share/fzf/key-bindings.zsh
+fi
+
 # disable flow control (for vim's <C-s>)
 stty -ixon
 
