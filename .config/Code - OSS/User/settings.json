@@ -1,4 +1,5 @@
 {
     "window.menuBarVisibility": "hidden",
     "editor.cursorWidth": 10,
+    "rust.mode": null
 }
