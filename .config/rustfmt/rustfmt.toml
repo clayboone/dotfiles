@@ -1,0 +1,6 @@
+reorder_imports = true
+fn_single_line = true
+wrap_comments = true
+use_try_shorthand = true
+use_field_init_shorthand = true
+max_width = 80
