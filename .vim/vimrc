@@ -63,7 +63,6 @@ set shiftwidth=4
 set smarttab
 set formatoptions+=rco
 set splitbelow
-set background=light
 set incsearch
 set mat=3
 set ignorecase
@@ -116,15 +115,16 @@ Plug 'easymotion/vim-easymotion'
 Plug 'Raimondi/delimitMate'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
+Plug 'terryma/vim-multiple-cursors'
 "install fzf system-wide for this to work
 "otherwise: Plug 'junegunn/fzf'
 Plug '/usr/bin/fzf'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 " plugin options
 "nerdtree
-" preserve <C-n> in syntastic
-nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-\> :NERDTreeToggle<CR>
 
 "nerdcommenter
 let g:NERDSpaceDelims = 1
@@ -181,5 +181,16 @@ autocmd BufWritePost *.py PymodeLintAuto
 " delimitMate
 let g:delimitMate_expand_space = 1
 let g:delimitMate_expand_cr = 1
+
+" colorscheme
+"termite handles italics pretty well, but tmux doesn't.
+set background=dark
+let g:gruvbox_italic=1
+colorscheme gruvbox
+highlight Normal ctermbg=NONE
+highlight EasyMotionTarget term=bold ctermbg=none ctermfg=darkyellow
+
+" vim-multiple-cursors
+"let g:multi_cursor_exit_from_visual_mode=0
 
 " `filetype plugin indent on` and `syntax enable` are run by plugend()
