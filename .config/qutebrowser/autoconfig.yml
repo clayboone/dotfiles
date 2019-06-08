@@ -40,3 +40,5 @@ settings:
     global: 800
   tabs.tabs_are_windows:
     global: true
+  url.start_pages:
+    global: https://weboas.is
