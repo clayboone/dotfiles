@@ -236,7 +236,7 @@ exec --no-startup-id dunst
 exec --no-startup-id yakyak
 
 # flashfocus
-exec_always --no-startup-id flashfocus
+#exec_always --no-startup-id flashfocus
 
 # screen locker
 exec --no-startup-id /usr/bin/xautolock -time 5 -detectsleep -locker /home/clay/scripts/auto_lock_screen.sh -nowlocker /home/clay/scripts/lock_screen.sh
