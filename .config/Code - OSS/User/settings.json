@@ -1,5 +1,17 @@
 {
-    "window.menuBarVisibility": "hidden",
-    "editor.cursorWidth": 10,
-    "rust.mode": null
+  "window.menuBarVisibility": "hidden",
+  "rust.mode": null,
+  "editor.cursorWidth": 2,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "python.linting.enabled": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": 0,
+  "[python]": {
+    "editor.rulers": [79]
+  },
+  "python.linting.flake8Enabled": true,
+  "python.formatting.provider": "yapf"
 }
