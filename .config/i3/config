@@ -157,8 +157,8 @@ bar {
 # Tell i3blocks when Caps_Lock is accidentally pressed.
 bindsym --release Caps_Lock exec --no-startup-id pkill -SIGRTMIN+11 i3blocks
 
-# Tell xautolock to lock now
-bindsym $win+l exec --no-startup-id xautolock -locknow
+# Bypass xautolock and lock screen immediately
+bindsym $win+l exec --no-startup-id $HOME/scripts/lock_screen.sh
 
 # Brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id /home/clay/scripts/bright.py -q +7% && pkill -SIGRTMIN+12 i3blocks
@@ -247,4 +247,4 @@ exec --no-startup-id yakyak
 #exec_always --no-startup-id flashfocus
 
 # screen locker
-exec --no-startup-id /usr/bin/xautolock -time 5 -detectsleep -locker /home/clay/scripts/auto_lock_screen.sh -nowlocker /home/clay/scripts/lock_screen.sh
+exec_always --no-startup-id $HOME/scripts/start_xautolock.sh
