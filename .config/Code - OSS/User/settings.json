@@ -8,7 +8,7 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "window.zoomLevel": -1,
+  "window.zoomLevel": 0,
   "[python]": {
     "editor.rulers": [79]
   },

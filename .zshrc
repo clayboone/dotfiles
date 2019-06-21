@@ -97,6 +97,9 @@ alias la="ls -l"
 
 unalias g
 alias g='git log --stat --graph'
+alias gdn='git --no-pager diff'
+alias gdc='git diff --cached'
+alias gdnc='gdn --cached'
 
 # enable fzf (arch)
 if [ -d /usr/share/fzf ]; then
