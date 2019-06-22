@@ -101,6 +101,10 @@ alias gdn='git --no-pager diff'
 alias gdc='git diff --cached'
 alias gdnc='gdn --cached'
 
+# `r` by default prints and eval's the last command. I find this not-so-
+# useful, let's map it to `ranger`
+alias r='ranger'
+
 # enable fzf (arch)
 if [ -d /usr/share/fzf ]; then
     source /usr/share/fzf/completion.zsh
