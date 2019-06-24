@@ -116,6 +116,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'terryma/vim-multiple-cursors'
+"Plug 'ivanov/vim-ipython'
 "install fzf system-wide for this to work
 "otherwise: Plug 'junegunn/fzf'
 Plug '/usr/bin/fzf'
@@ -176,8 +177,8 @@ let g:pymode_lint_on_write = 1
 let g:pymode_rope = 1
 let g:pymode_rope_complete_on_dot = 0
 
-autocmd FileType python nnoremap <F5>      :update<CR>:!python -i %<CR>
-autocmd FileType python inoremap <F5> <ESC>:update<CR>:!python -i %<CR>
+autocmd FileType python nnoremap <F5>      :update<CR>:!python %<CR>
+autocmd FileType python inoremap <F5> <ESC>:update<CR>:!python %<CR>
 
 "Auto-format when saving
 autocmd BufWritePost *.py PymodeLintAuto
