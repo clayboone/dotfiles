@@ -158,7 +158,7 @@ bar {
 bindsym --release Caps_Lock exec --no-startup-id pkill -SIGRTMIN+11 i3blocks
 
 # Bypass xautolock and lock screen immediately
-bindsym $win+l exec --no-startup-id $HOME/scripts/lock_screen.sh
+bindsym $win+l exec --no-startup-id $HOME/scripts/lock_screen_scrot.sh
 
 # Brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id $HOME/scripts/bright.py -q +7% && pkill -SIGRTMIN+12 i3blocks
