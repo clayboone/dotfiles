@@ -115,7 +115,9 @@ fi
 stty -ixon
 
 # set colors from wal
-(cat ~/.cache/wal/sequences &)
+if [ -f ~/.cache/wal/sequences ]; then
+    (cat ~/.cache/wal/sequences &)
+fi
 
 # print any config status changes
 config status -s
