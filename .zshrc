@@ -120,4 +120,7 @@ if [ -f ~/.cache/wal/sequences ]; then
 fi
 
 # print any config status changes
-config status -s
+CONFIG_CMD=$(alias config | awk -F"'" '{ print $2 }' | cut -d ' ' -f 1)
+if [[ "$CONFIG_CMD" == "git" ]]; then
+    config status -s
+fi
