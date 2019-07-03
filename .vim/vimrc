@@ -188,9 +188,12 @@ let g:delimitMate_expand_space = 1
 let g:delimitMate_expand_cr = 1
 
 " colorscheme
-"termite handles italics pretty well, but tmux doesn't.
 set background=dark
-let g:gruvbox_italic=1
+if exists('$TMUX')
+    let g:gruvbox_italic=0
+else
+    let g:gruvbox_italic=1
+endif
 colorscheme gruvbox
 highlight Normal ctermbg=NONE
 highlight EasyMotionTarget term=bold ctermbg=none ctermfg=darkyellow
