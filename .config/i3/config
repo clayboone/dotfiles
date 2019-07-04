@@ -55,6 +55,9 @@ bindsym $alt+v split v
 # enter fullscreen mode for the focused container
 bindsym $alt+f fullscreen toggle
 
+# default workspace layout
+workspace_layout tabbed
+
 # change container layout (stacked, tabbed, toggle split)
 bindsym $alt+s layout stacking
 bindsym $alt+w layout tabbed
@@ -197,8 +200,8 @@ mode "$mode_tv" {
 }
 
 # Gaps
-set $default_outer 2
-set $default_inner 5
+set $default_outer 0
+set $default_inner 15
 gaps outer $default_outer
 gaps inner $default_inner
 

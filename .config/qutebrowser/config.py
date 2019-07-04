@@ -15,14 +15,14 @@ c.downloads.location.prompt = True
 c.statusbar.hide = True
 
 # Use i3 to manage "tabs"
-c.tabs.tabs_are_windows = True # never use tabs
-c.tabs.show = 'never' # never show tab bar
-c.new_instance_open_target = 'window' # new instances
+c.tabs.tabs_are_windows = True  # never use tabs
+c.tabs.show = 'never'  # never show tab bar
+c.new_instance_open_target = 'window'  # new instances
 
-# Make font a bit smaller
-c.fonts.web.size.default = 14
-c.fonts.web.size.default_fixed = 12
-c.fonts.web.size.minimum = 6 # dont hide tiny text, though
+# Make font a bit smaller/bigger (?)
+c.fonts.web.size.default = 18
+c.fonts.web.size.default_fixed = 14
+c.fonts.web.size.minimum = 6  # dont hide tiny text, though
 
 # Binds
 config.bind('q', 'close')

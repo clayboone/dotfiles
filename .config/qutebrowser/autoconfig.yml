@@ -42,3 +42,5 @@ settings:
     global: true
   url.start_pages:
     global: https://weboas.is
+  zoom.default:
+    global: 125%
