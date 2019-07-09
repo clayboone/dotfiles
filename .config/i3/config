@@ -28,6 +28,9 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 2%+ unmut
 bindsym XF86AudioMicMute exec --no-startup-id amixer -q set Capture toggle
 bindsym XF86Launch1 exec --no-startup-id echo ThinkButton WIP
 
+# shutdown the computer
+bindsym $alt+F4 exec --no-startup-id $HOME/scripts/shutdown.sh
+
 # Focus
 bindsym $alt+a focus parent
 bindsym $alt+d focus child
