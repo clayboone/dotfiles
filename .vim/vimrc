@@ -67,6 +67,7 @@ set incsearch
 set mat=3
 set ignorecase
 set hlsearch
+set incsearch
 syntax on
 
 " Always show tabline, but if only 1 tab, it shows buffers.
