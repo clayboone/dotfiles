@@ -18,6 +18,9 @@ bindsym $alt+Shift+q kill
 # start rofi
 bindsym $alt+p exec --no-startup-id rofi -show drun
 
+# start rofi in xdg-open mode
+bindsym $alt+y exec --no-startup-id $HOME/scripts/rofi-search.js
+
 # screen grab
 bindsym Print exec --no-startup-id flameshot gui -p $HOME/images/captures
 
