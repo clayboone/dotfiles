@@ -19,7 +19,7 @@ bindsym $alt+Shift+q kill
 bindsym $alt+p exec --no-startup-id rofi -show drun
 
 # start rofi in xdg-open mode
-bindsym $alt+y exec --no-startup-id $HOME/scripts/rofi-search.js
+bindsym $alt+o exec --no-startup-id $HOME/scripts/rofi-search.js
 
 # screen grab
 bindsym Print exec --no-startup-id flameshot gui -p $HOME/images/captures
@@ -212,7 +212,7 @@ gaps outer $default_outer
 gaps inner $default_inner
 
 set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $alt+o mode "$mode_gaps_inner"
+bindsym $alt+m mode "$mode_gaps_inner"
 
 mode "$mode_gaps_inner" {
         bindsym j gaps inner current plus 5
