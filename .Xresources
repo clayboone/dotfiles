@@ -1,8 +1,0 @@
-set_from_resource $fg foreground
-set_from_resource $bg background
-set_from_resource $fbg color1
-
-rofi.color-window: BACKGROUND, BACKGROUND, BACKGROUND
-rofi.color-normal: BACKGROUND, FOREGROUND, BACKGROUND, COLOR1
-rofi.color-active: BACKGROUND, FOREGROUND, BACKGROUND, COLOR8
-rofi.color-urgent: BACKGROUND, FOREGROUND, BACKGROUND, COLOR1
