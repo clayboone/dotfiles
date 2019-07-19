@@ -123,6 +123,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug '/usr/bin/fzf'
 Plug 'morhetz/gruvbox'
 Plug 'severin-lemaignan/vim-minimap'
+Plug 'itspriddle/vim-shellcheck'
 call plug#end()
 
 " plugin options
