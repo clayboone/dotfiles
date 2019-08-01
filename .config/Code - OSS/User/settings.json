@@ -1,17 +1,40 @@
 {
+  "editor.fontFamily": "'Source Code Pro', 'monospace'",
+  "editor.fontSize": 16,
   "window.menuBarVisibility": "hidden",
-  "rust.mode": null,
+  "rust.mode": "rls",
   "editor.cursorWidth": 2,
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
-  "python.linting.enabled": false,
+  "editor.renderWhitespace": "none",
+  "editor.renderFinalNewline": false,
+  "files.trimFinalNewlines": true,
+  "files.insertFinalNewline": true,
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 0.35,
+
   "[python]": {
-    "editor.rulers": [79]
+    "editor.rulers": [80]
   },
-  "python.linting.flake8Enabled": true,
-  "python.formatting.provider": "yapf"
+
+  "python.linting.enabled": true,
+  "python.linting.lintOnSave": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.pylintUseMinimalCheckers": false,
+  // "python.linting.pydocstyleEnabled": true,
+
+  // "python.linting.pylintArgs": ["--"],
+
+  "python.linting.flake8Enabled": false,
+  "python.linting.pep8Enabled": false,
+  "python.linting.banditEnabled": false,
+  "python.linting.pylamaEnabled": false,
+  "python.linting.mypyEnabled": false,
+  "python.linting.prospectorEnabled": false,
+
+  "python.formatting.provider": "yapf",
+  "workbench.colorTheme": "Ariake Dark",
+  "workbench.iconTheme": "Monokai Pro Icons"
 }
