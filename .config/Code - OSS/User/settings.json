@@ -1,13 +1,17 @@
 {
   "editor.fontFamily": "'Source Code Pro', 'monospace'",
-  "editor.fontSize": 14,
+  "editor.fontSize": 12,
   "window.menuBarVisibility": "hidden",
   "rust.mode": "rls",
   "editor.cursorWidth": 2,
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
+  "editor.minimap.enabled": false,
   // "editor.renderWhitespace": "selection", // need to update vs code
   "editor.renderFinalNewline": false,
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.smoothScrolling": true,
+  "zenMode.fullScreen": false,
   "files.trimFinalNewlines": true,
   "files.insertFinalNewline": true,
   "[jsonc]": {
@@ -16,7 +20,7 @@
   // "window.zoomLevel": 0.35,
 
   "[python]": {
-    "editor.rulers": [80]
+    // "editor.rulers": [80]
   },
 
   "python.linting.enabled": true,
@@ -35,6 +39,8 @@
   "python.linting.prospectorEnabled": false,
 
   "python.formatting.provider": "yapf",
-  "workbench.colorTheme": "Monokai Pro",
-  "workbench.iconTheme": "Monokai Pro Icons"
+  "python.formatting.yapfArgs": ["--style", "{column-limit: 119}"],
+  "workbench.colorTheme": "Abyss",
+  "workbench.iconTheme": "Monokai Pro Icons",
+  "window.zoomLevel": 0
 }

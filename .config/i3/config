@@ -188,10 +188,10 @@ set $mode_brightness Brightness: 0% (h) | ⬇ (j) | ⬆ (k) | 100% (l)
 bindsym $alt+i mode "$mode_brightness"
 
 mode "$mode_brightness" {
-        bindsym h   exec --no-startup-id $HOME/scripts/bright.py -q 0% && pkill -SIGRTMIN+12 i3blocks
-        bindsym j   exec --no-startup-id $HOME/scripts/bright.py -q -7% && pkill -SIGRTMIN+12 i3blocks
-        bindsym k   exec --no-startup-id $HOME/scripts/bright.py -q +7% && pkill -SIGRTMIN+12 i3blocks
-        bindsym l   exec --no-startup-id $HOME/scripts/bright.py -q 100% && pkill -SIGRTMIN+12 i3blocks
+        bindsym h   exec --no-startup-id $HOME/scripts/bright.py 15% && pkill -SIGRTMIN+12 i3blocks
+        bindsym j   exec --no-startup-id $HOME/scripts/bright.py -7% && pkill -SIGRTMIN+12 i3blocks
+        bindsym k   exec --no-startup-id $HOME/scripts/bright.py +7% && pkill -SIGRTMIN+12 i3blocks
+        bindsym l   exec --no-startup-id $HOME/scripts/bright.py 85% && pkill -SIGRTMIN+12 i3blocks
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
